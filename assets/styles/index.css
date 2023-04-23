@@ -1,0 +1,87 @@
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+body {
+	font-family: 'Pangolin', sans-serif;
+	font-size: 16px;
+	color: #161616;
+	margin: 0;
+}
+
+.wrapper {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin: 0 auto;
+}
+
+.container {
+	max-width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.title {
+	margin-bottom: 20px;
+	text-align: center;
+	color: #035879;
+}
+
+.heroes__gridContainer {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+}
+
+.heroCard__wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 5px;
+	padding: 10px;
+	text-align: center;
+	border: thick double #035879;
+	border-radius: 10px;
+}
+
+.heroCard__image {
+	width: 100%;
+}
+
+/*----Рейтинг----*/
+.heroRating__wrapper {
+	direction: rtl;
+}
+
+.heroRating__input {
+	display: none;
+}
+
+.heroRating__label {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+}
+
+.heroRating__label::before {
+	content: "★";
+	font-size: 40px;
+	color: silver;
+}
+
+.heroRating__label::after {
+	content: "★";
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	left: 0;
+	font-size: 40px;
+	color: #035879;
+	opacity: 0;
+}
+
+.heroRating__label:hover::after,
+.heroRating__label:hover ~ .heroRating__label::after,
+.heroRating__input:checked ~ .heroRating__label::after {
+	opacity: 1;
+}
